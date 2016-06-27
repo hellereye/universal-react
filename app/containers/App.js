@@ -85,15 +85,14 @@ class App extends Component {
 			<MuiThemeProvider muiTheme={muiTheme}>
 
 				<div>
+					
 					<AppBar
 					title="Title"
 					iconClassNameRight="muidocs-icon-navigation-expand-more"
 					onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
 					/>
-					<Drawer docked={true} open={this.state.open} style={{'position': 'absolute', 'top': '64px'}}>
-						<AppBar title="AppBar" 
-							onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
-						/>
+					<Drawer docked={true} open={this.state.open} containerStyle={{height: 'calc(100% - 64px)', top: 64}}>
+						
 						<MenuItem>课堂管理</MenuItem>
 						<MenuItem>用户管理</MenuItem>
 						<MenuItem>用户管理</MenuItem>

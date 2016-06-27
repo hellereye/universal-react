@@ -18,12 +18,19 @@ class CleanPlugin {
 }
 
 module.exports = {
-    entry: './app/index',
+    entry:
+    // [
+    //     "app": path.resolve(ROOT_PATH, 'app/index.js'),
+    //     "vendors": ['jquery', 'moment'], //打包成vendors.js，公共的
+    // ]
+        './app/index',
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'app.min.js'
+            //filename: '[name].[hash].js'
     },
     plugins: [
+        //new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
         new webpack.optimize.OccurenceOrderPlugin(),
         new CleanPlugin({
             files: ['dist/*']
