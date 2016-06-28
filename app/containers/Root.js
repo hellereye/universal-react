@@ -2,7 +2,7 @@ import React, {
 	Component
 } from 'react';
 
-import '../styles/app.css';
+import '../css/app.css';
 
 class Root extends Component {
 

@@ -40,18 +40,39 @@ import {
 } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 
+
+import Avatar from 'material-ui/Avatar';
+import FileFolder from 'material-ui/svg-icons/file/folder';
+import FontIcon from 'material-ui/FontIcon';
+import List from 'material-ui/List/List';
+import ListItem from 'material-ui/List/ListItem';
+
+import {
+	blue300,
+	indigo900,
+	orange200,
+	deepOrange300,
+	pink400,
+	purple500,
+	yellow600
+} from 'material-ui/styles/colors';
+
+import Divider from 'material-ui/Divider';
+
+
+import ActionAssignment from 'material-ui/svg-icons/action/assignment';
+import EditorInsertChart from 'material-ui/svg-icons/editor/insert-chart';
+import ActionInfo from 'material-ui/svg-icons/action/info';
+
 const style = {
-	margin: 12,
+	margin: 5,
 };
 
 const muiTheme = getMuiTheme({
 	palette: {
 		accent1Color: blue500,
 	},
-	userAgent: false,
-	drawer: {
-		zIndex: 1000,
-	},
+	userAgent: false
 });
 
 injectTapEventPlugin();
@@ -83,23 +104,67 @@ class App extends Component {
 	render() {
 		return (
 			<MuiThemeProvider muiTheme={muiTheme}>
-
-				<div>
-					
+				<div>					
 					<AppBar
 					title="Title"
 					iconClassNameRight="muidocs-icon-navigation-expand-more"
-					onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
+					onLeftIconButtonTouchTap={this.handleToggle}
 					/>
 					<Drawer docked={true} open={this.state.open} containerStyle={{height: 'calc(100% - 64px)', top: 64}}>
-						
-						<MenuItem>课堂管理</MenuItem>
-						<MenuItem>用户管理</MenuItem>
-						<MenuItem>用户管理</MenuItem>
-						<MenuItem>录制管理</MenuItem>
-						<MenuItem>文档管理</MenuItem>
-						<MenuItem>站点配置 </MenuItem>
-						<MenuItem>统计报告</MenuItem>
+						<List>		
+							<ListItem
+							leftAvatar={<Avatar icon={<ActionAssignment />} backgroundColor={blue500} />}
+							rightIcon={<ActionInfo />}
+							primaryText="Vacation itinerary"
+							secondaryText="Jan 20, 2014"
+							/>
+							<ListItem
+							leftAvatar={<Avatar icon={<EditorInsertChart />} backgroundColor={yellow600} />}
+							rightIcon={<ActionInfo />}
+							primaryText="Kitchen remodel"
+							secondaryText="Jan 10, 2014"
+							/>				
+							<Link to="new">
+								<ListItem 
+									leftAvatar={
+										<Avatar
+										  icon={<FontIcon className="muidocs-icon-communication-voicemail" />}
+										  color={blue300}
+										  backgroundColor={indigo900}
+										  size={30}
+										  style={style}
+										>
+										</Avatar>								
+									}
+								>
+									课堂管理
+								</ListItem>
+							</Link>
+							<Divider />
+							<ListItem
+								leftAvatar={
+								<Avatar
+								  icon={<FileFolder />}
+								  color={orange200}
+								  backgroundColor={pink400}
+								  size={30}
+								  style={style}
+								/>
+							}
+							>
+								文档管理
+							</ListItem>
+							<Divider />
+							<ListItem							
+								leftAvatar={
+									<Avatar color={deepOrange300} backgroundColor={purple500} size={30} style={style}>
+										A
+									</Avatar>
+								}
+							>
+								Letter Avatar with custom colors and size
+							</ListItem>
+						</List>
 			        </Drawer>
 				
 				

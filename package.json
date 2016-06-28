@@ -40,6 +40,7 @@
     "classnames": "^2.2.3",
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
     "flexboxgrid": "^6.3.0",
     "history": "^2.0.0",
     "isomorphic-fetch": "^2.2.1",
@@ -55,8 +56,10 @@
     "react-router": "^2.0.0",
     "react-tap-event-plugin": "^1.0.0",
     "redux": "^3.3.1",
-    "redux-form": "^5.2.5",
-    "redux-thunk": "^2.0.1"
+    "redux-form": "^6.0.0-alpha.15",
+    "redux-form-material-ui": "^2.0.0",
+    "redux-thunk": "^2.0.1",
+    "url-loader": "^0.5.7"
   },
   "devDependencies": {
     "babel-loader": "^6.2.4",

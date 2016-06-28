@@ -4,7 +4,7 @@
     var webpack = require('webpack');
 
     var ROOT_PATH = path.resolve(__dirname);
-    var Css_PATH = path.resolve(ROOT_PATH, 'app/styles');
+    var Css_PATH = path.resolve(ROOT_PATH, 'app/css');
 
     module.exports = {
 
@@ -37,7 +37,10 @@
             //new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
         ],
         module: {
-            loaders: [
+            loaders: [{
+                    test: /\.eot/,
+                    loader: 'file?prefix=font/'
+                },
                 //load flexboxgrid
                 {
                     test: /\.css$/,
@@ -52,7 +55,7 @@
                     test: /\.js?$/,
                     loader: 'babel',
                     include: path.join(__dirname, 'app'),
-                    exclude: path.join(__dirname, 'app/styles'), //排除对css的解析
+                    exclude: path.join(__dirname, 'app/css'), //排除对css的解析
                     query: {
                         plugins: [
                             ['react-transform', {

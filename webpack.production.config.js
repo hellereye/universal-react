@@ -5,7 +5,7 @@ var webpack = require('webpack');
 var del = require('del');
 
 var ROOT_PATH = path.resolve(__dirname);
-var Css_PATH = path.resolve(ROOT_PATH, 'app/styles');
+var Css_PATH = path.resolve(ROOT_PATH, 'app/css');
 
 class CleanPlugin {
     constructor(options) {
@@ -43,7 +43,10 @@ module.exports = {
         })
     ],
     module: {
-        loaders: [
+        loaders: [{
+                test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+                loader: 'file-loader'
+            },
             //load flexboxgrid
             {
                 test: /\.css$/,
@@ -57,14 +60,14 @@ module.exports = {
                 test: /\.js?$/,
                 loader: 'babel',
                 include: path.join(__dirname, 'app'),
-
-                exclude: path.join(__dirname, 'app/styles'),
+                exclude: path.join(__dirname, 'app/css'),
+                exclude: /node_modules/,
                 query: {
                     plugins: [
                         ['transform-object-assign']
                     ]
                 }
-            }
+            },
         ]
     }
 };

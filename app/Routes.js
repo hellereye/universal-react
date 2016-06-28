@@ -6,12 +6,14 @@ import {
 import App from './containers/App';
 import Home from './containers/Home';
 import User from './containers/User';
+import reduxForm from './containers/reduxForm';
 import NoMatch from './containers/NoMatch';
 
 export default (
 	<Route path='/' component={App}>
 		<IndexRoute component={Home} />
 		<Route path='user/:id' component={User} />
+		<Route path="new" component={reduxForm} />
 		<Route path="*" component={NoMatch} />
 	</Route>
 );
