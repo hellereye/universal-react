@@ -55,6 +55,9 @@ import ActionInfo from 'material-ui/svg-icons/action/info';
 
 import IconButton from 'material-ui/IconButton';
 
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+
 const style = {
 	margin: 5,
 };
@@ -89,13 +92,16 @@ class App extends Component {
 
 	render() {
 		return (
-			<MuiThemeProvider muiTheme={muiTheme}>
+			<MuiThemeProvider>
 				<div>					
 					<AppBar
 					title="Title"
 					iconClassNameRight="muidocs-icon-navigation-expand-more"
 					onLeftIconButtonTouchTap={this.handleToggle}
 					/>
+					<FloatingActionButton secondary={true}>
+						<ContentAdd />
+					</FloatingActionButton>
 					<Drawer docked={true} open={this.state.open} containerStyle={{height: 'calc(100% - 64px)', top: 64}}>
 						<List>		
 							<ListItem
