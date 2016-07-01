@@ -46,6 +46,9 @@ module.exports = {
         loaders: [{
                 test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
                 loader: 'file-loader'
+            }, {
+                test: /\.(png|jpg|gif|jpeg)$/,
+                loader: 'url-loader?limit=8192'
             },
             //load flexboxgrid
             {

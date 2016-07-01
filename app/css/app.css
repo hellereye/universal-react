@@ -27,11 +27,13 @@ html {
 
 body, h1, h2, h3, h4, h5, h6 {
   margin: 0;
+
 }
 
 body {
   font-size: 16px;
   line-height: 24px;
+  /*background-image: url('../images/Abstract-HD-Wallpaper-1080p.jpg');*/
 }
 
 /* Used in our inline-styles.jsx as an example */

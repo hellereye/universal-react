@@ -1,0 +1,86 @@
+{
+	"posts": [{
+		"id": 1,
+		"title": "json-server",
+		"author": "typicode"
+	}],
+	"comments": [{
+		"id": 1,
+		"body": "some comment",
+		"postId": 1
+	}],
+	"profile": {
+		"name": "typicode"
+	},
+	"users": [{
+		"id": 0,
+		"name": "Kilback",
+		"username": "Conrad Borer",
+		"email": "Gaston.Rohan@yahoo.com",
+		"phone": "334-218-6711",
+		"website": "Lockman LLC"
+	}, {
+		"id": 1,
+		"name": "Welch",
+		"username": "Alda DuBuque",
+		"email": "Bennett_Kunde@yahoo.com",
+		"phone": "899-284-2529",
+		"website": "Hilll Group"
+	}, {
+		"id": 2,
+		"name": "King",
+		"username": "Keven Hyatt",
+		"email": "Ottis_Rippin@Shields.com",
+		"phone": "802-604-3279",
+		"website": "Grady LLC"
+	}, {
+		"id": 3,
+		"name": "Stroman",
+		"username": "Tyreek Legros",
+		"email": "Weber.Emery@Stanton.info",
+		"phone": "254-621-0489",
+		"website": "Metz and Sons"
+	}, {
+		"id": 4,
+		"name": "Marvin",
+		"username": "Daija Grimes",
+		"email": "Windler.Benton@Schuster.info",
+		"phone": "861-318-2516",
+		"website": "Goyette Ltd"
+	}, {
+		"id": 5,
+		"name": "Waelchi",
+		"username": "Macy Langworth",
+		"email": "Alysha.Heaney@yahoo.com",
+		"phone": "345-472-8145",
+		"website": "Wiza Group"
+	}, {
+		"id": 6,
+		"name": "Mills",
+		"username": "Alisa Hahn",
+		"email": "Destany_Mayer@Eliane.name",
+		"phone": "280-397-1625",
+		"website": "Douglas LLC"
+	}, {
+		"id": 7,
+		"name": "Howe",
+		"username": "Citlalli Hamill",
+		"email": "Freida_Eichmann@Hickle.info",
+		"phone": "721-809-1051",
+		"website": "Schaden PLC"
+	}, {
+		"id": 8,
+		"name": "Williamson",
+		"username": "Cordell Pfannerstill",
+		"email": "Waylon.Hills@hotmail.com",
+		"phone": "555-396-3000",
+		"website": "Kuhic and Sons"
+	}, {
+		"id": 9,
+		"name": "Mante",
+		"username": "Elise Cole",
+		"email": "Katheryn_Bosco@yahoo.com",
+		"phone": "463-324-5248",
+		"website": "Yost Inc"
+	}]
+}

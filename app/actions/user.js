@@ -5,15 +5,26 @@ export const USER_FETCH_FAILED = 'USER_FETCH_FAILED';
 
 function fetchUser(userId) {
 	return (dispatch) => {
-		dispatch({ type: USER_FETCHING, userId: userId });
+		dispatch({
+			type: USER_FETCHING,
+			userId: userId
+		});
 
-		return fetch('http://jsonplaceholder.typicode.com/users/' + userId)
+		return fetch('http://localhost:3008/users/' + userId)
 			.then((response) => {
 				return response.json();
 			})
 			.then(
-				(result) => dispatch({ type: USER_FETCHED, userId: userId, result }),
-				(error) => dispatch({ type: USER_FETCH_FAILED, userId: userId, error })
+				(result) => dispatch({
+					type: USER_FETCHED,
+					userId: userId,
+					result
+				}),
+				(error) => dispatch({
+					type: USER_FETCH_FAILED,
+					userId: userId,
+					error
+				})
 			);
 	}
 }

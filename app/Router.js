@@ -7,7 +7,8 @@ import {
 	Router,
 	match,
 	RouterContext,
-	browserHistory
+	browserHistory,
+	createMemoryHistory
 } from 'react-router';
 import Helmet from 'react-helmet';
 import routes from './Routes';
@@ -17,17 +18,28 @@ import {
 import Root from './containers/Root';
 import configureStore from './configureStore';
 
+import {
+
+	syncHistoryWithStore
+
+
+} from 'react-router-redux'
+
 // import styles from './styles/app.css';
+
+const baseHistory = createMemoryHistory();
+
 
 
 const isClient = typeof document !== 'undefined';
 
 if (isClient) {
-	const store = configureStore(window.__INITIAL_STATE__);
 
+	const store = configureStore(window.__INITIAL_STATE__, history);
+	const history = syncHistoryWithStore(browserHistory, store);
 	ReactDOM.render(
 		<Provider store={store}>
-    		<Router history={browserHistory}>{routes}</Router>
+    		<Router history={history}>{routes}</Router>
     	</Provider>,
 		document.getElementById('root')
 	);
@@ -61,7 +73,7 @@ function routeIsUnmatched(renderProps) {
 }
 
 function handleRoute(res, renderProps) {
-	const store = configureStore();
+	const store = configureStore({}, browserHistory);
 	const status = routeIsUnmatched(renderProps) ? 404 : 200;
 	const readyOnAllActions = renderProps.components
 		.filter((component) => component.readyOnActions)

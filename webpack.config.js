@@ -40,6 +40,9 @@
             loaders: [{
                     test: /\.eot/,
                     loader: 'file?prefix=font/'
+                }, {
+                    test: /\.(png|jpg|gif|jpeg)$/,
+                    loader: 'url-loader?limit=8192'
                 },
                 //load flexboxgrid
                 {

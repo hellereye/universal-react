@@ -58,6 +58,7 @@ import IconButton from 'material-ui/IconButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
+
 const style = {
 	margin: 5,
 };
@@ -102,6 +103,7 @@ class App extends Component {
 					<FloatingActionButton secondary={true}>
 						<ContentAdd />
 					</FloatingActionButton>
+					
 					<Drawer docked={true} open={this.state.open} containerStyle={{height: 'calc(100% - 64px)', top: 64}}>
 						<List>		
 							<ListItem
