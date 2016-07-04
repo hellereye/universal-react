@@ -19,23 +19,17 @@ import Root from './containers/Root';
 import configureStore from './configureStore';
 
 import {
-
 	syncHistoryWithStore
-
-
 } from 'react-router-redux'
 
 // import styles from './styles/app.css';
-
-const baseHistory = createMemoryHistory();
-
 
 
 const isClient = typeof document !== 'undefined';
 
 if (isClient) {
 
-	const store = configureStore(window.__INITIAL_STATE__, history);
+	const store = configureStore(window.__INITIAL_STATE__, browserHistory);
 	const history = syncHistoryWithStore(browserHistory, store);
 	ReactDOM.render(
 		<Provider store={store}>
@@ -44,7 +38,13 @@ if (isClient) {
 		document.getElementById('root')
 	);
 }
-
+/**
+ * [renderComponentWithRoot description]
+ * @param  {[type]} RouterContext      [description]
+ * @param  {[type]} componentProps [description]
+ * @param  {[type]} store          [description]
+ * @return {[type]}                [description]
+ */
 function renderComponentWithRoot(Component, componentProps, store) {
 	const componentHtml = renderToStaticMarkup(
 		<Provider store={store}>

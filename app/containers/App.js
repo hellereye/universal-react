@@ -118,7 +118,7 @@ class App extends Component {
 							primaryText="Kitchen remodel"
 							secondaryText="Jan 10, 2014"
 							/>				
-							<Link to="new">
+							<Link to="/new">
 								<ListItem 
 									leftAvatar={
 										<Avatar
@@ -135,19 +135,21 @@ class App extends Component {
 								</ListItem>
 							</Link>
 							<Divider />
-							<ListItem
-								leftAvatar={
-								<Avatar
-								  icon={<FileFolder />}
-								  color={orange200}
-								  backgroundColor={pink400}
-								  size={30}
-								  style={style}
-								/>
-							}
-							>
-								文档管理
-							</ListItem>
+							<Link to="/login">
+								<ListItem
+									leftAvatar={
+									<Avatar
+									  icon={<FileFolder />}
+									  color={orange200}
+									  backgroundColor={pink400}
+									  size={30}
+									  style={style}
+									/>
+								}
+								>
+									登录
+								</ListItem>
+							</Link>
 							<Divider />
 							<ListItem							
 								leftAvatar={
